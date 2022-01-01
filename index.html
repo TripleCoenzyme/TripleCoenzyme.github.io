@@ -130,7 +130,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-count">6</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -235,6 +235,91 @@
 <hr>
 <p>欢迎来到 辅酶的辅酶的辅酶 的主页!</p>
 <p>个人简介请访问<a href="/about">关于</a>选项卡</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://triplecoenzyme.github.io/2022/01/02/mount-disk/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/selfie.jpg">
+      <meta itemprop="name" content="TripleCoenzyme <br/> 辅酶的辅酶的辅酶">
+      <meta itemprop="description" content="A bad PhD student <br/> and a bad coder. <br/> 废柴博士生+废柴码农一枚 <br/> <br/> <del>でも彼女募集中(^^ゞ</del>">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="辅酶的主页">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/01/02/mount-disk/" class="post-title-link" itemprop="url">mount disk</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2022-01-02 01:39:59 / 修改时间：02:05:04" itemprop="dateCreated datePublished" datetime="2022-01-02T01:39:59+08:00">2022-01-02</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="直接挂载"><a href="#直接挂载" class="headerlink" title="直接挂载"></a>直接挂载</h2><ol>
+<li><p>使用<code>sudo fdisk -l</code>与<code>lsblk -f</code>确定挂载目标盘情况，如果出现未格式化情况，可能需要使用<code>sudo mkfs -t ext4 /dev/xxx</code>进行格式化</p>
+</li>
+<li><p>在<code>/mnt/</code>内创建文件夹，用于挂载硬盘</p>
+</li>
+<li><p>使用<code>sudo mount /dev/xxx /mnt/xxx</code>进行挂载</p>
+</li>
+<li><p>使用<code>sudo umount -v /dev/xxx</code>或<code>sudo umount -v /mnt/xxx</code>进行卸载</p>
+</li>
+</ol>
+<h2 id="开机自动挂载"><a href="#开机自动挂载" class="headerlink" title="开机自动挂载"></a>开机自动挂载</h2><ol>
+<li><p>至少完成直接挂载，确保不存在挂载本身问题</p>
+</li>
+<li><p>通过<code>sudo blkid /dev/xxx</code>查询硬盘本身UUID</p>
+</li>
+<li><p>修改<code>/etc/fstab</code>文件，在末尾添加：</p>
+<pre><code class="bash">UUID=************   /mnt/xxx    ext4    defaults    0   2
+</code></pre>
+<p>第一个数字：0表示开机不检查磁盘，1表示开机检查磁盘；<br>第二个数字：0表示交换分区，1代表启动分区（Linux），2表示普通分区</p>
+</li>
+</ol>
 
       
     </div>
