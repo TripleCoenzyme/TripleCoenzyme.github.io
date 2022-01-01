@@ -20,29 +20,33 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"triplecoenzyme.github.io","root":"/","images":"/images","scheme":"Gemini","darkmode":false,"version":"8.8.2","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":false,"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
-<meta name="description" content="创建新post$ hexo new [layout] &lt;title&gt;   layout可为post, page, draft等，其中draft可将编辑内容保存为草稿，具体用法可见 hexo-draft  title有空格带引号，无空格可不带  hexo new (post) 命令生成md文件于&#x2F;source&#x2F;_posts&#x2F;文件夹下   Details in Writing 置顶post">
+<meta name="description" content="Conda（服务器端root账号下一次安装，全部用户可使用） 下载anaconda安装脚本，可通过清华镜像下载，linux下可使用wget，如： wget https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;archive&#x2F;Anaconda3-2021.11-Linux-x86_64.sh   切换到root账户或者使用具有sudo权限账号运行脚本，如： s">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo-Post操作">
-<meta property="og:url" content="https://triplecoenzyme.github.io/2021/12/16/Post%E6%93%8D%E4%BD%9C/index.html">
+<meta property="og:title" content="environment building">
+<meta property="og:url" content="https://triplecoenzyme.github.io/2022/01/01/environment-building/index.html">
 <meta property="og:site_name" content="辅酶的主页">
-<meta property="og:description" content="创建新post$ hexo new [layout] &lt;title&gt;   layout可为post, page, draft等，其中draft可将编辑内容保存为草稿，具体用法可见 hexo-draft  title有空格带引号，无空格可不带  hexo new (post) 命令生成md文件于&#x2F;source&#x2F;_posts&#x2F;文件夹下   Details in Writing 置顶post">
+<meta property="og:description" content="Conda（服务器端root账号下一次安装，全部用户可使用） 下载anaconda安装脚本，可通过清华镜像下载，linux下可使用wget，如： wget https:&#x2F;&#x2F;mirrors.tuna.tsinghua.edu.cn&#x2F;anaconda&#x2F;archive&#x2F;Anaconda3-2021.11-Linux-x86_64.sh   切换到root账户或者使用具有sudo权限账号运行脚本，如： s">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2021-12-15T18:20:09.000Z">
-<meta property="article:modified_time" content="2021-12-15T18:23:31.278Z">
+<meta property="article:published_time" content="2022-01-01T12:42:03.000Z">
+<meta property="article:modified_time" content="2022-01-01T16:00:40.776Z">
 <meta property="article:author" content="TripleCoenzyme &lt;br&#x2F;&gt; 辅酶的辅酶的辅酶">
-<meta property="article:tag" content="Hexo">
 <meta property="article:tag" content="Tech sticky">
+<meta property="article:tag" content="Environment building">
+<meta property="article:tag" content="Anaconda">
+<meta property="article:tag" content="ANTs">
+<meta property="article:tag" content="FSL">
+<meta property="article:tag" content="Linux">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="https://triplecoenzyme.github.io/2021/12/16/Post%E6%93%8D%E4%BD%9C/">
+<link rel="canonical" href="https://triplecoenzyme.github.io/2022/01/01/environment-building/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://triplecoenzyme.github.io/2021/12/16/Post%E6%93%8D%E4%BD%9C/","path":"2021/12/16/Post操作/","title":"Hexo-Post操作"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"https://triplecoenzyme.github.io/2022/01/01/environment-building/","path":"2022/01/01/environment-building/","title":"environment building"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>Hexo-Post操作 | 辅酶的主页</title>
+<title>environment building | 辅酶的主页</title>
   
 
 
@@ -120,7 +124,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E6%96%B0post"><span class="nav-number">1.</span> <span class="nav-text">创建新post</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BD%AE%E9%A1%B6post"><span class="nav-number">2.</span> <span class="nav-text">置顶post</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Conda%EF%BC%88%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AFroot%E8%B4%A6%E5%8F%B7%E4%B8%8B%E4%B8%80%E6%AC%A1%E5%AE%89%E8%A3%85%EF%BC%8C%E5%85%A8%E9%83%A8%E7%94%A8%E6%88%B7%E5%8F%AF%E4%BD%BF%E7%94%A8%EF%BC%89"><span class="nav-number">1.</span> <span class="nav-text">Conda（服务器端root账号下一次安装，全部用户可使用）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FSL"><span class="nav-number">2.</span> <span class="nav-text">FSL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ANTs"><span class="nav-number">3.</span> <span class="nav-text">ANTs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VSCode"><span class="nav-number">4.</span> <span class="nav-text">VSCode</span></a></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -189,7 +193,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://triplecoenzyme.github.io/2021/12/16/Post%E6%93%8D%E4%BD%9C/">
+    <link itemprop="mainEntityOfPage" href="https://triplecoenzyme.github.io/2022/01/01/environment-building/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/selfie.jpg">
@@ -202,7 +206,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          Hexo-Post操作
+          environment building
         </h1>
 
         <div class="post-meta-container">
@@ -212,9 +216,15 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
-      
 
-      <time title="创建时间：2021-12-16 02:20:09 / 修改时间：02:23:31" itemprop="dateCreated datePublished" datetime="2021-12-16T02:20:09+08:00">2021-12-16</time>
+      <time title="创建时间：2022-01-01 20:42:03" itemprop="dateCreated datePublished" datetime="2022-01-01T20:42:03+08:00">2022-01-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-01-02 00:00:40" itemprop="dateModified" datetime="2022-01-02T00:00:40+08:00">2022-01-02</time>
     </span>
 
   
@@ -227,23 +237,83 @@
     
     
     <div class="post-body" itemprop="articleBody">
-        <h2 id="创建新post"><a href="#创建新post" class="headerlink" title="创建新post"></a>创建新post</h2><pre><code class="bash">$ hexo new [layout] &lt;title&gt;
+        <h2 id="Conda（服务器端root账号下一次安装，全部用户可使用）"><a href="#Conda（服务器端root账号下一次安装，全部用户可使用）" class="headerlink" title="Conda（服务器端root账号下一次安装，全部用户可使用）"></a>Conda（服务器端root账号下一次安装，全部用户可使用）</h2><ol>
+<li><p>下载anaconda安装脚本，可通过<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">清华镜像</a>下载，linux下可使用wget，如：</p>
+<pre><code class="bash">wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.11-Linux-x86_64.sh
 </code></pre>
-<ul>
-<li><p>layout可为post, page, draft等，其中draft可将编辑内容保存为草稿，具体用法可见 <a target="_blank" rel="noopener" href="https://novnan.github.io/Hexo/hexo-draft/">hexo-draft</a></p>
 </li>
-<li><p>title有空格带引号，无空格可不带</p>
+<li><p>切换到root账户或者使用具有sudo权限账号运行脚本，如：</p>
+<pre><code class="bash">sh Anaconda3-2021.11-Linux-x86_64.sh -p /opt/anaconda3 -b
+</code></pre>
+<p>其中 -p 指定安装位置，-b 无需人工干预。这里选择 <code>/opt/anaconda3</code> 安装是因为该位置每个账户均可以访问该位置，也可以使用<code>/usr/local/anaconda3</code></p>
 </li>
-<li><p><code>hexo new (post)</code> 命令生成md文件于<code>/source/_posts/</code>文件夹下</p>
+<li><p>等待安装结束后用用户账户运行</p>
+<pre><code class="bash">/opt/anaconda3/bin/conda init bash
+</code></pre>
+<p>之后重新打开终端即可激活conda环境。</p>
 </li>
-</ul>
-<p>Details in <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h2 id="置顶post"><a href="#置顶post" class="headerlink" title="置顶post"></a>置顶post</h2><p><strong>不需要更换插件</strong>，参考hexo-generator-index 插件 <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo-generator-index/pull/51">issue</a></p>
-<p>在要置顶的post中加入sticky字段即可，如<code>sticky: 10</code></p>
-<ul>
-<li>sticky取大于0的值即表示置顶，且值越大越靠前</li>
-<li>利用该方法置顶时会自动在标题左侧加上置顶符号</li>
-</ul>
+</ol>
+<p><strong>这种方法安装的conda环境存在互相干扰的可能性，建议用户不要在base环境中进行任何修改，使用<code>conda create -n &lt;name&gt;</code>创建自己anaconda虚拟环境后再修改</strong></p>
+<h2 id="FSL"><a href="#FSL" class="headerlink" title="FSL"></a>FSL</h2><ol>
+<li><p>下载fsl安装脚本</p>
+<pre><code class="bash">wget https://fsl.fmrib.ox.ac.uk/fsldownloads/fslinstaller.py
+</code></pre>
+</li>
+<li><p>下载python2用于运行脚本</p>
+<pre><code class="bash">sudo apt install python
+</code></pre>
+</li>
+<li><p>安装fsl</p>
+<pre><code class="bash">sudo python2 fslinstaller.py -d /usr/local/fsl
+</code></pre>
+</li>
+<li><p>在任何需要使用fsl的用户账户终端输入以下命令添加环境变量：</p>
+<pre><code>sed -i &#39;$a FSLDIR=/usr/local/fsl\n. $&#123;FSLDIR&#125;/etc/fslconf/fsl.sh\nPATH=$&#123;FSLDIR&#125;/bin:$&#123;PATH&#125;\nexport FSLDIR PATH&#39; ~/.bashrc
+source ~/.bashrc
+</code></pre>
+<p>参考<a target="_blank" rel="noopener" href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation/ShellSetup">环境变量配置指南</a>编写，效果是在用户环境变量文件末尾添加所需内容并刷新之。如需对所有用户都进行环境变量配置，可将写入与更新路径改为 <code>/etc/bash.bashrc</code></p>
+</li>
+<li><p>（非常见）安装完成后出现 <code>error while loading shared libraries: libquadmath.so.0: cannot open shared object file: No such file or directory</code> 错误，可能是安装依赖不完全导致，<code>sudo apt install libquadmath0</code> 安装对应库即可解决问题</p>
+</li>
+</ol>
+<h2 id="ANTs"><a href="#ANTs" class="headerlink" title="ANTs"></a>ANTs</h2><p>参考<a target="_blank" rel="noopener" href="https://github.com/ANTsX/ANTs/wiki/Compiling-ANTs-on-Linux-and-Mac-OS">官方安装指南</a></p>
+<ol>
+<li><p>(如果已经安装可以跳过）安装所需依赖</p>
+<pre><code class="bash">sudo apt install gcc g++ git zlib1g
+sudo snap install cmake --classic
+</code></pre>
+<p>使用snap安装cmake是为了获取最新版本的cmake，防止因cmake版本号过低导致的安装失败</p>
+</li>
+<li><p>运行以下代码来编译ANTs</p>
+<pre><code class="bash">git clone https://github.com/ANTsX/ANTs.git
+mkdir ANTs/build
+cd ANTs/build
+sudo cmake \
+ -DCMAKE_INSTALL_PREFIX=/usr/local/ANTs \
+ ../ 2&gt;&amp;1 | sudo tee cmake.log
+sudo make -j 4 2&gt;&amp;1 | tee build.log
+cd ANTS-build
+sudo make install 2&gt;&amp;1 | sudo tee install.log
+</code></pre>
+<p>这里可能由于github连接问题导致ITK下载失败，再试几次可能能够解决问题</p>
+</li>
+</ol>
+<ol start="3">
+<li>在任何需要使用fsl的用户账户终端输入以下命令添加环境变量<pre><code class="bash">sed -i &#39;$a ANTSPATH=/usr/local/ANTs/bin\nPATH=$&#123;ANTSPATH&#125;:$&#123;PATH&#125;\nexport ANTSPATH PATH&#39; ~/.bashrc
+source ~/.bashrc
+</code></pre>
+如果已经根据上文安装流程安装FSL，可以通过文字编辑器编辑 <code>~/.bashrc</code> 文件对结尾部分进行一定简化，如：<pre><code class="bash">FSLDIR=/usr/local/fsl
+. $&#123;FSLDIR&#125;/etc/fslconf/fsl.sh
+ANTSPATH=/usr/local/ANTs/bin
+PATH=$&#123;ANTSPATH&#125;:$&#123;FSLDIR&#125;/bin:$&#123;PATH&#125;
+export FSLDIR ANTSPATH PATH
+</code></pre>
+</li>
+</ol>
+<h2 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a>VSCode</h2><pre><code class="bash">wget -q https://packages.microsoft.com/keys/microsoft.asc -O- | sudo apt-key add -
+sudo add-apt-repository &quot;deb [arch=amd64] https://packages.microsoft.com/repos/vscode stable main&quot;
+sudo apt install code
+</code></pre>
 
     </div>
 
@@ -253,22 +323,23 @@
 
     <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Hexo/" rel="tag"># Hexo</a>
               <a href="/tags/Tech-sticky/" rel="tag"># Tech sticky</a>
+              <a href="/tags/Environment-building/" rel="tag"># Environment building</a>
+              <a href="/tags/Anaconda/" rel="tag"># Anaconda</a>
+              <a href="/tags/ANTs/" rel="tag"># ANTs</a>
+              <a href="/tags/FSL/" rel="tag"># FSL</a>
+              <a href="/tags/Linux/" rel="tag"># Linux</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2021/12/16/Hexo%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C/" rel="prev" title="Hexo基本操作">
-                  <i class="fa fa-chevron-left"></i> Hexo基本操作
+                <a href="/2021/12/16/h5-as-pytorch-dataset/" rel="prev" title=".h5 file as pytorch dataset">
+                  <i class="fa fa-chevron-left"></i> .h5 file as pytorch dataset
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2021/12/16/h5-as-pytorch-dataset/" rel="next" title=".h5 file as pytorch dataset">
-                  .h5 file as pytorch dataset <i class="fa fa-chevron-right"></i>
-                </a>
             </div>
           </div>
     </footer>

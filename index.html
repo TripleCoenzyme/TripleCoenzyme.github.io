@@ -130,13 +130,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">4</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
           <a href="/tags/">
-        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-count">9</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
@@ -236,6 +236,123 @@
 <p>欢迎来到 辅酶的辅酶的辅酶 的主页!</p>
 <p>个人简介请访问<a href="/about">关于</a>选项卡</p>
 
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="https://triplecoenzyme.github.io/2022/01/01/environment-building/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/selfie.jpg">
+      <meta itemprop="name" content="TripleCoenzyme <br/> 辅酶的辅酶的辅酶">
+      <meta itemprop="description" content="A bad PhD student <br/> and a bad coder. <br/> 废柴博士生+废柴码农一枚 <br/> <br/> <del>でも彼女募集中(^^ゞ</del>">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="辅酶的主页">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2022/01/01/environment-building/" class="post-title-link" itemprop="url">environment building</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2022-01-01 20:42:03" itemprop="dateCreated datePublished" datetime="2022-01-01T20:42:03+08:00">2022-01-01</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2022-01-02 00:00:40" itemprop="dateModified" datetime="2022-01-02T00:00:40+08:00">2022-01-02</time>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h2 id="Conda（服务器端root账号下一次安装，全部用户可使用）"><a href="#Conda（服务器端root账号下一次安装，全部用户可使用）" class="headerlink" title="Conda（服务器端root账号下一次安装，全部用户可使用）"></a>Conda（服务器端root账号下一次安装，全部用户可使用）</h2><ol>
+<li><p>下载anaconda安装脚本，可通过<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/">清华镜像</a>下载，linux下可使用wget，如：</p>
+<pre><code class="bash">wget https://mirrors.tuna.tsinghua.edu.cn/anaconda/archive/Anaconda3-2021.11-Linux-x86_64.sh
+</code></pre>
+</li>
+<li><p>切换到root账户或者使用具有sudo权限账号运行脚本，如：</p>
+<pre><code class="bash">sh Anaconda3-2021.11-Linux-x86_64.sh -p /opt/anaconda3 -b
+</code></pre>
+<p>其中 -p 指定安装位置，-b 无需人工干预。这里选择 <code>/opt/anaconda3</code> 安装是因为该位置每个账户均可以访问该位置，也可以使用<code>/usr/local/anaconda3</code></p>
+</li>
+<li><p>等待安装结束后用用户账户运行</p>
+<pre><code class="bash">/opt/anaconda3/bin/conda init bash
+</code></pre>
+<p>之后重新打开终端即可激活conda环境。</p>
+</li>
+</ol>
+<p><strong>这种方法安装的conda环境存在互相干扰的可能性，建议用户不要在base环境中进行任何修改，使用<code>conda create -n &lt;name&gt;</code>创建自己anaconda虚拟环境后再修改</strong></p>
+<h2 id="FSL"><a href="#FSL" class="headerlink" title="FSL"></a>FSL</h2><ol>
+<li><p>下载fsl安装脚本</p>
+<pre><code class="bash">wget https://fsl.fmrib.ox.ac.uk/fsldownloads/fslinstaller.py
+</code></pre>
+</li>
+<li><p>下载python2用于运行脚本</p>
+<pre><code class="bash">sudo apt install python
+</code></pre>
+</li>
+<li><p>安装fsl</p>
+<pre><code class="bash">sudo python2 fslinstaller.py -d /usr/local/fsl
+</code></pre>
+</li>
+<li><p>在任何需要使用fsl的用户账户终端输入以下命令添加环境变量：</p>
+<pre><code>sed -i &#39;$a FSLDIR=/usr/local/fsl\n. $&#123;FSLDIR&#125;/etc/fslconf/fsl.sh\nPATH=$&#123;FSLDIR&#125;/bin:$&#123;PATH&#125;\nexport FSLDIR PATH&#39; ~/.bashrc
+source ~/.bashrc
+</code></pre>
+<p>参考<a target="_blank" rel="noopener" href="https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FslInstallation/ShellSetup">环境变量配置指南</a>编写，效果是在用户环境变量文件末尾添加所需内容并刷新之。如需对所有用户都进行环境变量配置，可将写入与更新路径改为 <code>/etc/bash.bashrc</code></p>
+</li>
+<li><p>（非常见）安装完成后出现 <code>error while loading shared libraries: libquadmath.so.0: cannot open shared object file: No such file or directory</code> 错误，可能是安装依赖不完全导致，<code>sudo apt install libquadmath0</code> 安装对应库即可解决问题</p>
+</li>
+</ol>
+<h2 id="ANTs"><a href="#ANTs" class="headerlink" title="ANTs"></a>ANTs</h2><p>参考<a target="_blank" rel="noopener" href="https://github.com/ANTsX/ANTs/wiki/Compiling-ANTs-on-Linux-and-Mac-OS">官方安装指南</a></p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2022/01/01/environment-building/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -512,8 +629,8 @@
 
 
 <div class="copyright">
-  &copy; 
-  <span itemprop="copyrightYear">2021</span>
+  &copy; 2021 – 
+  <span itemprop="copyrightYear">2022</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
