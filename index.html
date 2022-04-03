@@ -597,7 +597,7 @@ sudo apt upgrade
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2022-01-02 00:32:51" itemprop="dateModified" datetime="2022-01-02T00:32:51+08:00">2022-01-02</time>
+      <time title="修改时间：2022-04-03 18:42:11" itemprop="dateModified" datetime="2022-04-03T18:42:11+08:00">2022-04-03</time>
     </span>
 
   
@@ -627,6 +627,7 @@ sudo apt upgrade
 </li>
 </ol>
 <p><strong>这种方法安装的conda环境存在互相干扰的可能性，建议用户不要在base环境中进行任何修改，使用<code>conda create -n &lt;name&gt;</code>创建自己anaconda虚拟环境后再修改</strong></p>
+<p><strong>该情况存在共用缓存文件夹导致的权限问题，目前能想到的解决方案是在每次安装后使用<code>sudo chmod +777 -R /opt/anaconda3/pkgs/</code>将缓存文件夹中所有文件更改为777</strong></p>
 <h2 id="FSL"><a href="#FSL" class="headerlink" title="FSL"></a>FSL</h2><ol>
 <li><p>下载fsl安装脚本</p>
 <pre><code class="bash">wget https://fsl.fmrib.ox.ac.uk/fsldownloads/fslinstaller.py
@@ -649,7 +650,7 @@ source ~/.bashrc
 <li><p>（非常见）安装完成后出现 <code>error while loading shared libraries: libquadmath.so.0: cannot open shared object file: No such file or directory</code> 错误，可能是安装依赖不完全导致，<code>sudo apt install libquadmath0</code> 安装对应库即可解决问题</p>
 </li>
 </ol>
-<h2 id="ANTs"><a href="#ANTs" class="headerlink" title="ANTs"></a>ANTs</h2><p>参考<a target="_blank" rel="noopener" href="https://github.com/ANTsX/ANTs/wiki/Compiling-ANTs-on-Linux-and-Mac-OS">官方安装指南</a></p>
+<h2 id="ANTs"><a href="#ANTs" class="headerlink" title="ANTs"></a>ANTs</h2>
           <!--noindex-->
             <div class="post-button">
               <a class="btn" href="/2022/01/01/environment-building/#more" rel="contents">
